@@ -32,28 +32,28 @@ module.exports = {
             }
         },
         plugins: [
-            new UglifyJsPlugin({
-                uglifyOptions: {
-                    compress: {
-                        warnings: false,
-                        drop_debugger: true,
-                        drop_console: true,
-                    },
-                },
-                sourceMap: false,
-                parallel: true,
-            }),
-            new CompressionWebpackPlugin({
-                asset: '[path].gz[query]',
-                algorithm: 'gzip',
-                test: new RegExp(
-                    '\\.(' +
-                    ['js', 'css'].join('|') +
-                    ')$',
-                ),
-                threshold: 10240,
-                minRatio: 0.8,
-            }),
+            // new UglifyJsPlugin({
+            //     uglifyOptions: {
+            //         compress: {
+            //             warnings: false,
+            //             drop_debugger: true,
+            //             drop_console: true,
+            //         },
+            //     },
+            //     sourceMap: false,
+            //     parallel: true,
+            // }),
+            // new CompressionWebpackPlugin({
+            //     asset: '[path].gz[query]',
+            //     algorithm: 'gzip',
+            //     test: new RegExp(
+            //         '\\.(' +
+            //         ['js', 'css'].join('|') +
+            //         ')$',
+            //     ),
+            //     threshold: 10240,
+            //     minRatio: 0.8,
+            // }),
             new CopyWebpackPlugin([{from: path.join(cesiumSource, cesiumWorkers), to: 'Workers'}]),
             new CopyWebpackPlugin([{from: path.join(cesiumSource, 'Assets'), to: 'Assets'}]),
             new CopyWebpackPlugin([{from: path.join(cesiumSource, 'Widgets'), to: 'Widgets'}]),
