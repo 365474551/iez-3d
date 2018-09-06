@@ -1,6 +1,6 @@
 <template>
     <div id="cesiumContainer">
-        <ToolBar></ToolBar>
+        <ToolBar/>
         <!--<ToolBarR></ToolBarR>-->
     </div>
 </template>
@@ -35,6 +35,8 @@ export default {
         baseLayerPicker: false,
         animation: false,
         geocoder: new LocalGeocoder()
+      },
+      naviOptions: {
 
       }
     })
@@ -44,6 +46,6 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="less">
+    @import "../assets/cesium-viewer";
 </style>
